@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B4B929E1AC10D8D00D8D5FA /* IQLabelView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0B4B92991AC10D8D00D8D5FA /* IQLabelView.bundle */; };
+		0B4B929F1AC10D8D00D8D5FA /* IQLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B929B1AC10D8D00D8D5FA /* IQLabelView.m */; };
+		0B4B92A01AC10D8D00D8D5FA /* UITextField+DynamicFontSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B929D1AC10D8D00D8D5FA /* UITextField+DynamicFontSize.m */; };
 		0B531F4A1A0F535D00037B62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B531F491A0F535D00037B62 /* main.m */; };
 		0B531F4D1A0F535D00037B62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B531F4C1A0F535D00037B62 /* AppDelegate.m */; };
 		0B531F531A0F535D00037B62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B531F511A0F535D00037B62 /* Main.storyboard */; };
@@ -33,6 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B4B92991AC10D8D00D8D5FA /* IQLabelView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQLabelView.bundle; sourceTree = "<group>"; };
+		0B4B929A1AC10D8D00D8D5FA /* IQLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQLabelView.h; sourceTree = "<group>"; };
+		0B4B929B1AC10D8D00D8D5FA /* IQLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQLabelView.m; sourceTree = "<group>"; };
+		0B4B929C1AC10D8D00D8D5FA /* UITextField+DynamicFontSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+DynamicFontSize.h"; sourceTree = "<group>"; };
+		0B4B929D1AC10D8D00D8D5FA /* UITextField+DynamicFontSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+DynamicFontSize.m"; sourceTree = "<group>"; };
 		0B531F441A0F535D00037B62 /* WallpaperMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WallpaperMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B531F481A0F535D00037B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B531F491A0F535D00037B62 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,6 +90,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B4B92981AC10D8D00D8D5FA /* IQLabelView */ = {
+			isa = PBXGroup;
+			children = (
+				0B4B92991AC10D8D00D8D5FA /* IQLabelView.bundle */,
+				0B4B929A1AC10D8D00D8D5FA /* IQLabelView.h */,
+				0B4B929B1AC10D8D00D8D5FA /* IQLabelView.m */,
+				0B4B929C1AC10D8D00D8D5FA /* UITextField+DynamicFontSize.h */,
+				0B4B929D1AC10D8D00D8D5FA /* UITextField+DynamicFontSize.m */,
+			);
+			path = IQLabelView;
+			sourceTree = "<group>";
+		};
 		0B531F3B1A0F535D00037B62 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +205,7 @@
 		0B531F721A0F55AD00037B62 /* 3rdparty */ = {
 			isa = PBXGroup;
 			children = (
+				0B4B92981AC10D8D00D8D5FA /* IQLabelView */,
 			);
 			path = 3rdparty;
 			sourceTree = "<group>";
@@ -335,6 +356,7 @@
 			files = (
 				0B531F531A0F535D00037B62 /* Main.storyboard in Resources */,
 				0B531F551A0F535D00037B62 /* Images.xcassets in Resources */,
+				0B4B929E1AC10D8D00D8D5FA /* IQLabelView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,10 +379,12 @@
 				0B531F4A1A0F535D00037B62 /* main.m in Sources */,
 				0B531F981A0F96AA00037B62 /* SloganMessage.m in Sources */,
 				0B531F801A0F5B3600037B62 /* HomeViewController.m in Sources */,
+				0B4B92A01AC10D8D00D8D5FA /* UITextField+DynamicFontSize.m in Sources */,
 				0B531F831A0F5B5E00037B62 /* BaseNavigationController.m in Sources */,
 				0B531F861A0F5BA100037B62 /* BaseView.m in Sources */,
 				0B531F8B1A0F7A9600037B62 /* SceneManager.m in Sources */,
 				0B531F8E1A0F7AE400037B62 /* SceneView.m in Sources */,
+				0B4B929F1AC10D8D00D8D5FA /* IQLabelView.m in Sources */,
 				0B531F931A0F8AF600037B62 /* WallpaperMakerTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
