@@ -43,7 +43,9 @@
 }
 
 - (void) action_recieveNotificationMainBackgroundTouched {
-    [self hideEditingHandles];
+    if (self.superview && _isShowingEditingHandles) {
+        [self hideEditingHandles];
+    }
 }
 
 -(void)dealloc {

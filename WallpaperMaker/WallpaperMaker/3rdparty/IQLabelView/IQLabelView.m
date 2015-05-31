@@ -36,9 +36,6 @@ CG_INLINE CGSize CGAffineTransformGetScale(CGAffineTransform t)
     return CGSizeMake(sqrt(t.a * t.a + t.c * t.c), sqrt(t.b * t.b + t.d * t.d)) ;
 }
 
-
-static IQLabelView *lastTouchedView;
-
 @implementation IQLabelView
 {
     CGFloat _globalInset;
@@ -245,8 +242,6 @@ static IQLabelView *lastTouchedView;
 
 - (void)hideEditingHandles
 {
-    lastTouchedView = nil;
-    
     _isShowingEditingHandles = NO;
     
     if (_enableClose)       closeView.hidden = YES;
@@ -263,11 +258,7 @@ static IQLabelView *lastTouchedView;
 
 - (void)showEditingHandles
 {
-    [lastTouchedView hideEditingHandles];
-    
     _isShowingEditingHandles = YES;
-    
-    lastTouchedView = self;
     
     if (_enableClose)       closeView.hidden = NO;
     if (_enableRotate)      rotateView.hidden = NO;
@@ -389,6 +380,8 @@ static IQLabelView *lastTouchedView;
     }
     [self contentTapped:nil];
     [_textView adjustsWidthToFillItsContents];
+    
+    [self.superview bringSubviewToFront:self];
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -398,6 +391,10 @@ static IQLabelView *lastTouchedView;
     }
     [_textView adjustsWidthToFillItsContents];
     return YES;
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    [_textView adjustsWidthToFillItsContents];
 }
 
 @end
