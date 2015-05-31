@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="fZt-y8-nU7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="fZt-y8-nU7">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Home View Controller-->
@@ -17,6 +17,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.20706702591396486" green="0.66666666666666663" blue="0.56352726063598668" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fgo-pc-6r0" appends="YES" id="iFK-QI-Xaa"/>
+                                </connections>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="r9u-2r-FjK">
                                 <rect key="frame" x="20" y="70" width="46" height="30"/>
@@ -57,33 +61,24 @@
                                     <action selector="action_addSlogan" destination="fZt-y8-nU7" eventType="touchUpInside" id="Mcc-e0-6aB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PFP-i6-YzE">
-                                <rect key="frame" x="260" y="70" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.28627450980000002" green="0.67450980390000004" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <state key="normal" title="删除标签">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="action_deleteSlogan" destination="fZt-y8-nU7" eventType="touchUpInside" id="Heg-Rf-FZk"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="btn_addSlogan" destination="jaC-qn-ywY" id="fcf-XD-UYt"/>
                         <outlet property="btn_createButton" destination="l30-pn-pBv" id="FAe-bV-hEB"/>
-                        <outlet property="btn_deleteSlogan" destination="PFP-i6-YzE" id="wVx-n3-aT8"/>
                         <outlet property="btn_saveButton" destination="r9u-2r-FjK" id="dMv-pO-e4R"/>
-                        <outlet property="clv_contentView" destination="2Tf-Mb-iQq" id="RJu-rE-EYN"/>
+                        <outlet property="slv_contentView" destination="2Tf-Mb-iQq" id="Mp1-s2-xUS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQk-hE-5P8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fgo-pc-6r0">
+                    <connections>
+                        <action selector="action_backgroundTouchAction" destination="fZt-y8-nU7" id="uWz-ga-Gb9"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="244" y="432"/>
+            <point key="canvasLocation" x="464" y="408"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

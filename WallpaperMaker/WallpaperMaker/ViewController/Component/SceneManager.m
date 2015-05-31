@@ -8,7 +8,7 @@
 
 #import "SceneManager.h"
 #import "SceneView.h"
-#import "SloganMessage.h"
+#import "Slogan.h"
 
 @implementation SceneManager
 
@@ -20,8 +20,8 @@
     return [SceneView sceneViewWithSize:size];
 }
 
-+(SloganMessage *)createSloganMessage{
-    return [SloganMessage sloganMessage];
++(Slogan *)createSlogan{
+    return [Slogan slogan];
 }
 
 @end

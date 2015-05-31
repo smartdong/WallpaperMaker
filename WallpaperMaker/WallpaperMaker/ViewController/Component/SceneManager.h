@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 @class SceneView;
-@class SloganMessage;
+@class Slogan;
 
 /**
  *  管理壁纸以及标语 (新建)
@@ -38,7 +38,7 @@
  *
  *  @return 生成的标语信息view
  */
-+ (SloganMessage *) createSloganMessage;
++ (Slogan *) createSlogan;
 
 
 @end

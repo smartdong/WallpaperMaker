@@ -217,7 +217,7 @@ static IQLabelView *lastTouchedView;
     [_textView setAutoresizingMask:(UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight)];
     _textView.delegate = self;
     _textView.backgroundColor = [UIColor clearColor];
-    _textView.tintColor = [UIColor redColor];
+//    _textView.tintColor = [UIColor redColor];
     [_textView becomeFirstResponder];
     
     border = [CAShapeLayer layer];

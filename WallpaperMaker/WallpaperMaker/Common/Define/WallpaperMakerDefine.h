@@ -21,11 +21,11 @@
 //提示标题
 #define Define_alert_view_title                     @"提示"
 
-//选中标语后的通知
-#define Define_Notification_Selected_Slogan         @"Define_Notification_Selected_Slogan"
 
-//取消选中标语后的通知
-#define Define_Notification_Deselected_Slogan       @"Define_Notification_Deselected_Slogan"
+/**
+ *  首页背景点击时触发的通知
+ */
+#define Notification_Main_Backgroud_Touched_Event   @"Notification_Main_Backgroud_Touched_Event"
 
 
 

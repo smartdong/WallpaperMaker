@@ -12,12 +12,6 @@
 #import "WallpaperMakerTools.h"
 #import "CommonDefine.h"
 #import "WallpaperMakerDefine.h"
-#import "SloganMessage.h"
-
-//当前没有壁纸
-//#define Tag_alert_view_no_wallpaper                 910001
-
-
 
 @interface HomeViewController ()<UIAlertViewDelegate>
 
@@ -29,7 +23,7 @@
 /**
  *  作为容器的scroll view
  */
-@property (weak, nonatomic) IBOutlet UIScrollView *clv_contentView;
+@property (weak, nonatomic) IBOutlet UIScrollView *slv_contentView;
 
 /**
  *  新建按钮
@@ -46,19 +40,9 @@
  */
 @property (weak, nonatomic) IBOutlet UIButton *btn_addSlogan;
 
-/**
- *  删除标签
- */
-@property (weak, nonatomic) IBOutlet UIButton *btn_deleteSlogan;
-
 
 
 ////////////////////////////////////////////////////////////////
-
-/**
- *  当前选中的标语
- */
-@property (nonatomic , strong) SloganMessage *currentSlogan;
 
 
 @end
@@ -67,31 +51,6 @@
 
 
 
-
-#pragma mark - Alert View Delegate
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
-    switch (alertView.tag) {
-//        case Tag_alert_view_no_wallpaper:
-//        {
-//            //没有壁纸
-//            
-//            if (buttonIndex == 0) {
-//                //不保存
-//                
-//            }else{
-//                //新建
-//                [self action_createNewScene];
-//            }
-//            
-//        }
-            break;
-            
-        default:
-            break;
-    }
-}
 
 #pragma mark - Button Action
 
@@ -103,24 +62,22 @@
     //如果当前有正在制作的壁纸 则提示保存
     if (self.view_scene) {
         
-        //提示保存
-//        mAlertViewWithButtonTitle(Define_alert_view_title, @"当前", <#dlg#>, <#tg#>, <#cancelTitle#>, <#comfirmTitle#>)
-        
         [self.view_scene removeFromSuperview];
         self.view_scene = nil;
         
         [self action_enableCreateSloganButton:NO];
-        [self action_enableDeleteSloganButton:NO];
         [self action_enableSaveButton:NO];
+        
+        [self action_createNewScene];
         
     }else{
         
         //创建新壁纸
         self.view_scene = [SceneManager createScene];
         
-        [self.clv_contentView addSubview:self.view_scene];
+        [self.slv_contentView addSubview:self.view_scene];
         
-        self.clv_contentView.contentSize = self.view_scene.frame.size;
+        self.slv_contentView.contentSize = self.view_scene.frame.size;
         
         [self action_enableSaveButton:YES];
         
@@ -144,19 +101,7 @@
  *  添加标签
  */
 - (IBAction)action_addSlogan {
-    [self.view_scene addSubview:[SceneManager createSloganMessage]];
-}
-
-/**
- *  删除标签
- */
-- (IBAction)action_deleteSlogan {
-    
-    [self.currentSlogan endEditing:YES];
-    
-    [self.currentSlogan removeFromSuperview];
-    
-    self.currentSlogan = nil;
+    [self.view_scene addSubview:(UIView *)[SceneManager createSlogan]];
 }
 
 
@@ -167,13 +112,6 @@
  */
 -(void)action_enableSaveButton:(BOOL)isEnable{
     [self action_enableButton:_btn_saveButton isEnable:isEnable];
-}
-
-/**
- *  设置删除标签按钮状态
- */
--(void)action_enableDeleteSloganButton:(BOOL)isEnable{
-    [self action_enableButton:_btn_deleteSlogan isEnable:isEnable];
 }
 
 /**
@@ -200,21 +138,10 @@
     }
 }
 
-
-//接收通知  选中某条标语
-- (void) action_receiveSelectedSloganNotification:(NSNotification *)notification {
-    
-    self.currentSlogan = notification.object;
-    
-    [self action_enableDeleteSloganButton:YES];
+- (IBAction) action_backgroundTouchAction {
+    //以后可以把当前所有标签的array作为object传过去  让标签自己从array中移除 然后再从super view中移除
+    [[NSNotificationCenter defaultCenter] postNotificationName:Notification_Main_Backgroud_Touched_Event object:nil];
 }
-
-//接收通知  取消选中某条标语
-- (void) action_receiveDeselectedSloganNotification:(NSNotification *)notification {
-    
-    [self action_enableDeleteSloganButton:NO];
-}
-
 
 #pragma mark - Life Cycle
 
@@ -224,24 +151,9 @@
     
     //当前没有可以保存的图片
     [self action_enableSaveButton:NO];
-    //当前没有选择标签  无法删除
-    [self action_enableDeleteSloganButton:NO];
     //当前没有壁纸 不能添加标签
     [self action_enableCreateSloganButton:NO];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(action_receiveSelectedSloganNotification:)
-                                                 name:Define_Notification_Selected_Slogan
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(action_receiveDeselectedSloganNotification:)
-                                                 name:Define_Notification_Deselected_Slogan
-                                               object:nil];
-}
-
--(void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

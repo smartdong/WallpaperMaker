@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1EE1071B1B232400C3CEF4 /* Slogan.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1EE1061B1B232400C3CEF4 /* Slogan.m */; };
 		0B4B929E1AC10D8D00D8D5FA /* IQLabelView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0B4B92991AC10D8D00D8D5FA /* IQLabelView.bundle */; };
 		0B4B929F1AC10D8D00D8D5FA /* IQLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B929B1AC10D8D00D8D5FA /* IQLabelView.m */; };
 		0B4B92A01AC10D8D00D8D5FA /* UITextField+DynamicFontSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B929D1AC10D8D00D8D5FA /* UITextField+DynamicFontSize.m */; };
@@ -22,7 +23,6 @@
 		0B531F8B1A0F7A9600037B62 /* SceneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B531F8A1A0F7A9600037B62 /* SceneManager.m */; };
 		0B531F8E1A0F7AE400037B62 /* SceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B531F8D1A0F7AE400037B62 /* SceneView.m */; };
 		0B531F931A0F8AF600037B62 /* WallpaperMakerTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B531F921A0F8AF600037B62 /* WallpaperMakerTools.m */; };
-		0B531F981A0F96AA00037B62 /* SloganMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B531F971A0F96AA00037B62 /* SloganMessage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B1EE1051B1B232400C3CEF4 /* Slogan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slogan.h; sourceTree = "<group>"; };
+		0B1EE1061B1B232400C3CEF4 /* Slogan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Slogan.m; sourceTree = "<group>"; };
 		0B4B92991AC10D8D00D8D5FA /* IQLabelView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQLabelView.bundle; sourceTree = "<group>"; };
 		0B4B929A1AC10D8D00D8D5FA /* IQLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQLabelView.h; sourceTree = "<group>"; };
 		0B4B929B1AC10D8D00D8D5FA /* IQLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQLabelView.m; sourceTree = "<group>"; };
@@ -68,8 +70,6 @@
 		0B531F921A0F8AF600037B62 /* WallpaperMakerTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallpaperMakerTools.m; sourceTree = "<group>"; };
 		0B531F941A0F8C4500037B62 /* CommonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
 		0B531F951A0F8CAF00037B62 /* WallpaperMakerDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallpaperMakerDefine.h; sourceTree = "<group>"; };
-		0B531F961A0F96AA00037B62 /* SloganMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SloganMessage.h; sourceTree = "<group>"; };
-		0B531F971A0F96AA00037B62 /* SloganMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SloganMessage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,8 +250,8 @@
 				0B531F8A1A0F7A9600037B62 /* SceneManager.m */,
 				0B531F8C1A0F7AE400037B62 /* SceneView.h */,
 				0B531F8D1A0F7AE400037B62 /* SceneView.m */,
-				0B531F961A0F96AA00037B62 /* SloganMessage.h */,
-				0B531F971A0F96AA00037B62 /* SloganMessage.m */,
+				0B1EE1051B1B232400C3CEF4 /* Slogan.h */,
+				0B1EE1061B1B232400C3CEF4 /* Slogan.m */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -377,11 +377,11 @@
 				0B531F4D1A0F535D00037B62 /* AppDelegate.m in Sources */,
 				0B531F7D1A0F593900037B62 /* BaseViewController.m in Sources */,
 				0B531F4A1A0F535D00037B62 /* main.m in Sources */,
-				0B531F981A0F96AA00037B62 /* SloganMessage.m in Sources */,
 				0B531F801A0F5B3600037B62 /* HomeViewController.m in Sources */,
 				0B4B92A01AC10D8D00D8D5FA /* UITextField+DynamicFontSize.m in Sources */,
 				0B531F831A0F5B5E00037B62 /* BaseNavigationController.m in Sources */,
 				0B531F861A0F5BA100037B62 /* BaseView.m in Sources */,
+				0B1EE1071B1B232400C3CEF4 /* Slogan.m in Sources */,
 				0B531F8B1A0F7A9600037B62 /* SceneManager.m in Sources */,
 				0B531F8E1A0F7AE400037B62 /* SceneView.m in Sources */,
 				0B4B929F1AC10D8D00D8D5FA /* IQLabelView.m in Sources */,
